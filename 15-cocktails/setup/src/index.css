@@ -52,8 +52,8 @@ Buttons
 .btn-primary {
   text-transform: uppercase;
   letter-spacing:  0.3rem;
-  color: #476a2e;
-  border: 2px solid #476a2e;
+  color: #f63a99;
+  border: 2px solid #f63a99;
   padding: 0.45rem 0.8rem;
   display: inline-block;
   transition:  all 0.3s linear;
@@ -64,7 +64,7 @@ Buttons
   display: inline-block;
 }
 .btn:hover {
-  background: #476a2e;
+  background: #f63a99;
   color:  #fff;
 }
 .btn-white {
@@ -74,16 +74,16 @@ Buttons
 }
 .btn-white:hover {
   background: #fff;
-  color:#476a2e;
+  color:#f63a99;
 }
 .btn-primary {
-  background: #476a2e;
+  background: #f63a99;
   color:  #fff;
   border-color: transparent;
 }
 .btn-primary:hover {
   background: #d4e6a5;
-  color: #476a2e;
+  color: #f63a99;
 }
 .btn-block {
   width: 100%;
@@ -109,7 +109,7 @@ Navbar
   height: 5rem;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #476a2e;
+  border-bottom: 2px solid #f63a99;
   box-shadow:2px 5px 3px 0px rgba(0, 0, 0, 0.5);
 }
 .nav-center {
@@ -136,7 +136,7 @@ Navbar
   transition:  all 0.3s linear;
 }
 .nav-links a:hover {
-  color: #476a2e;
+  color: #f63a99;
 }
 .logo {
   width: 12rem;
@@ -265,7 +265,7 @@ Form
   margin-bottom: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.25rem;
-  color: #476a2e;
+  color: #f63a99;
 }
 .form-control input {
   width: 100%;
@@ -306,7 +306,7 @@ Cocktail
   background: #d4e6a5;
   padding: 0.25rem 0.5rem;
   border-radius:  0.25rem;
-  color:#476a2e;
+  color:#f63a99;
 }
 .drink-info {
   padding-top: 2rem;
@@ -322,41 +322,61 @@ Cocktail
     padding-top: 0;
   }
 }
-.loader,
-.loader:before,
-.loader:after {
-  background: transparent;
-  -webkit-animation: load1 1s infinite ease-in-out;
-  animation: load1 1s infinite ease-in-out;
-  width: 1em;
-  height: 4em;
+
+.loader-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .loader {
-  color: #476a2e;
-  text-indent: -9999em;
-  margin: 88px auto;
-  margin-top: 20rem;
+  height: 150px;
+  width: 100px;
+  border-radius: 55px 55px 10px 10px;
   position: relative;
-  font-size: 3rem;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s;
+  background: #FF3D00;
+  background-image: linear-gradient(0deg,
+    #f63a99 25%,
+    #30dcf6 25%,
+    #30dcf6 25%,
+    #30dcf6 50%,
+    #f2d200 50%,
+    #f2d200 50%,
+    #f2d200 75%,
+    #70ca5c 75%);
+  background-position: 0px 0px;
+  background-size: auto 175px;
+  background-repeat: repeat-y;
+  animation: colorShift 6s linear infinite;
 }
-.loader:before,
-.loader:after {
-  position: absolute;
-  top: 0;
-  content: '';
-}
+
 .loader:before {
-  left: -1.5em;
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
+  content: '';
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+  width: 15px;
+  height: 100px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.5);
 }
+
 .loader:after {
-  left: 1.5em;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50% , 0);
+  box-shadow: 0 15px 2px rgba(0, 0, 0, 0.25) inset;
+  width: 32px;
+  height: 45px;
+  background: #E09C5F;
+  border-radius: 0 0 12px 12px;
+}
+
+@keyframes colorShift {
+  to {
+    background-position: 0 175px
+  }
 }
 @-webkit-keyframes load1 {
   0%,
